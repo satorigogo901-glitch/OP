@@ -1,12 +1,12 @@
 function introspect(iface) {
-  const result = [];
+  const res = [];
   for (const key of Object.keys(iface)) {
-    const value = iface[key];
-    if (typeof value === 'function') {
-      result.push([key, value.length]);
+    const fn = iface[key];
+    if (typeof fn === 'function') {
+      res.push([key, fn.length]);
     }
   }
-  return result;
+  return res;
 }
 
 module.exports = { introspect };
