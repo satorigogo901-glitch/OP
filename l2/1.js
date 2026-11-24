@@ -1,2 +1,3 @@
 let name = 'Нікіта';
-module.exports = {name};
+
+module.exports = { name };
