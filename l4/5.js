@@ -1,6 +1,5 @@
 function sum(...args) {
-  return args.reduce(function (total, value) {
-    return total + value;
-  }, 0);
+  return args.reduce((res, x) => res + x, 0);
 }
+
 module.exports = { sum };
