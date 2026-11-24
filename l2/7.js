@@ -1,14 +1,11 @@
-// const дозволяє змінювати поля об'єкта, але повторне присвоєння
-// самому ідентифікатору спричиняє TypeError. Для let дозволено обидві дії.
 const fn = () => {
-  const first = { name: 'Анна' };
-  let second = { name: 'Олена' };
+  const first = { name: 'Максим' };
+  let second = { name: 'Катя' };
 
-  first.name = 'Марія';
-  second.name = 'Ірина';
+  first.name = 'Нікіта';
+  second.name = 'Галина';
   second = { name: 'Софія' };
-
   return { first, second };
 };
 
-module.exports = { fn };
+module.exports = {fn};
