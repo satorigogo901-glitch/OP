@@ -1,11 +1,9 @@
 function inc(num) {
   num.n += 1;
 }
-
 if (require.main === module) {
-  const obj = { n: 5 };
+  const obj = {n:5};
   inc(obj);
   console.dir(obj);
 }
-
-module.exports = { inc };
+module.exports = {inc};
