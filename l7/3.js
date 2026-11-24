@@ -1,6 +1,5 @@
-function unique(array) {
-  const values = new Set(array);
-  return Array.from(values);
+function unique(arr) {
+  return [...new Set(arr)];
 }
 
 module.exports = { unique };
