@@ -1,16 +1,13 @@
-const { random } = require('./1');
-
-function generateKey(length, characters) {
-  const alphabet = Array.from(characters);
-  if (length > 0 && alphabet.length === 0) {
-    throw new RangeError('The character set must not be empty');
+function generateKey(l, ch) {
+  const s = Array.from(ch);
+  if (l > 0 && s.length === 0) {
+    throw new RangeError('Додай хоча б один символ');
   }
-
   let key = '';
-  for (let index = 0; index < length; index++) {
-    key += alphabet[random(alphabet.length - 1)];
+  for (let i = 0; i < l; i++) {
+    const index = Math.floor(Math.random() * s.length);
+    key += s[index];
   }
   return key;
 }
-
-module.exports = { generateKey };
+module.exports = {generateKey};
