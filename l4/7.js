@@ -1,12 +1,11 @@
-function ages(persons) {
-  const result = [];
-  for (const name in persons) {
-    if (Object.hasOwn(persons, name)) {
-      const person = persons[name];
-      result.push([name, person.died - person.born]);
-    }
+function ages(obj) {
+  const res = { __proto__: null };
+  for (const name in obj) {
+    if (!Object.hasOwn(obj, name)) continue;
+    const p = obj[name];
+    res[name] = p.died - p.born;
   }
-  return Object.fromEntries(result);
+  return { ...res };
 }
 
 module.exports = { ages };
