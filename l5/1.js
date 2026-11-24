@@ -1,21 +1,21 @@
-function seq(...functions) {
-  for (const fn of functions) {
+function seq(...fns) {
+  for (const fn of fns) {
     if (typeof fn !== 'function') {
       throw new TypeError('Очікується функція');
     }
   }
 
-  return function (next) {
-    if (typeof next === 'number') {
-      let result = next;
-      for (let i = functions.length - 1; i >= 0; i--) {
-        const fn = functions[i];
-        result = fn(result);
-      }
-      return result;
+  return (next) => {
+    if (typeof next !== 'number') {
+      return seq(...fns, next);
     }
 
-    return seq(...functions, next);
+    let res = next;
+    for (let i = fns.length - 1; i >= 0; i--) {
+      const fn = fns[i];
+      res = fn(res);
+    }
+    return res;
   };
 }
 
