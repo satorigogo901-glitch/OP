@@ -3,13 +3,11 @@ const cube = (x) => x ** 3;
 const average = (a, b) => (a + b) / 2;
 
 const calculate = () => {
-  const results = [];
-  for (let x = 0; x <= 9; x++) {
-    const squared = square(x);
-    const cubed = cube(x);
-    results.push(average(squared, cubed));
+  const arr = [];
+  for (let i = 0; i < 10; i++) {
+    arr.push(average(square(i), cube(i)));
   }
-  return results;
+  return arr;
 };
 
 module.exports = { square, cube, average, calculate };
