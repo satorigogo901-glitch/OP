@@ -1,7 +1,5 @@
 function store(value) {
-  return function () {
-    return value;
-  };
+  return () => value;
 }
 
 module.exports = { store };
