@@ -1,3 +1,5 @@
-const createUser = (name, city) => ({ name, city });
+function createUser(name, city) {
+  return { name, city };
+}
 
 module.exports = { createUser };
