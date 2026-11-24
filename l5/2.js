@@ -1,17 +1,8 @@
 function array() {
-  const values = [];
-
-  function get(index) {
-    return values[index];
-  }
-
-  get.push = function (value) {
-    return values.push(value);
-  };
-
-  get.pop = function () {
-    return values.pop();
-  };
+  const arr = [];
+  const get = (i) => arr[i];
+  get.push = (value) => arr.push(value);
+  get.pop = () => arr.pop();
 
   return get;
 }
