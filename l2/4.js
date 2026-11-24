@@ -1,8 +1,9 @@
 const range = (start, end) => {
-  const numbers = [];
-  for (let number = start; number <= end; number++) {
-    numbers.push(number);
+  const arr = [];
+  for (let i = start; i <= end; i++) {
+    arr.push(i);
   }
-  return numbers;
+  return arr;
 };
+
 module.exports = { range };
