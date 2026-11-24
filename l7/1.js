@@ -1,11 +1,11 @@
-function removeElement(array, item) {
-  let index = array.indexOf(item);
+function rem(arr, item) {
+  let i = arr.indexOf(item);
   if (Number.isNaN(item)) {
-    index = array.findIndex(Number.isNaN);
+    i = arr.findIndex(Number.isNaN);
   }
-  if (index !== -1) {
-    array.splice(index, 1);
+  if (i !== -1) {
+    arr.splice(i, 1);
   }
 }
 
-module.exports = { removeElement };
+module.exports = { removeElement: rem };
