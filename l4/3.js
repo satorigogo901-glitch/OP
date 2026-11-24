@@ -1,11 +1,11 @@
 function sum(...args) {
-  let total = 0;
-  let index = 0;
-  while (index < args.length) {
-    total += args[index];
-    index++;
+  let res = 0;
+  let i = 0;
+  while (i < args.length) {
+    res += args[i];
+    i++;
   }
-  return total;
+  return res;
 }
 
 module.exports = { sum };
