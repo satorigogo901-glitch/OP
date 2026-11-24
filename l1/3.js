@@ -20,8 +20,7 @@ function countWithKnownTypes(values) {
   }
   return counts;
 }
-
-function countWithDynamicTypes(values) {
+function dt(values) {
   const counts = {};
   for (const value of values) {
     const type = typeof value;
@@ -32,10 +31,9 @@ function countWithDynamicTypes(values) {
   }
   return counts;
 }
-
 if (require.main === module) {
-  console.dir(countWithKnownTypes(values));
-  console.dir(countWithDynamicTypes(values));
+  console.dir(dt(values));
+  console.dir(dt(values));
 }
 
-module.exports = { countWithKnownTypes, countWithDynamicTypes };
+module.exports = {dt, countWithDynamicTypes};
