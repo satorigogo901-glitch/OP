@@ -3,5 +3,4 @@ function sum(...args) {
     return total + value;
   }, 0);
 }
-
 module.exports = { sum };
