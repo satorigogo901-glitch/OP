@@ -1,6 +1,6 @@
 'use strict';
 
-const ages = persons => {
+const ages = (persons) => {
   const result = {};
   for (const name in persons) {
     if (Object.hasOwn(persons, name)) {

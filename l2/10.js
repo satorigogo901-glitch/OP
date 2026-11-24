@@ -1,12 +1,11 @@
 'use strict';
 
-const { phonebook: entries } = require('./9');
+const phonebook = {
+  'Marcus Aurelius': '+380445554433',
+  Anna: '+380000000002',
+  Olena: '+380000000003',
+};
 
-const phonebook = Object.assign(
-  Object.create(null),
-  Object.fromEntries(entries.map(({ name, phone }) => [name, phone])),
-);
-
-const findPhoneByName = n => phonebook[n];
+const findPhoneByName = (name) => phonebook[name];
 
 module.exports = { phonebook, findPhoneByName };

@@ -1,6 +1,6 @@
 'use strict';
 
-const inc = n => n + 1;
+const inc = (n) => n + 1;
 
 if (require.main === module) {
   const a = 5;

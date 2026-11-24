@@ -1,11 +1,11 @@
 'use strict';
 
 const seq = (...fns) => {
-  if (!fns.every(fn => typeof fn === 'function')) {
+  if (!fns.every((fn) => typeof fn === 'function')) {
     throw new TypeError('seq expects functions before the final number');
   }
 
-  return next => {
+  return (next) => {
     if (typeof next === 'number') {
       return fns.reduceRight((value, fn) => fn(value), next);
     }

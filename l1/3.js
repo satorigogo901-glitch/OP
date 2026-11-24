@@ -5,7 +5,7 @@ const values = [
   0, 'JavaScript', 3.5, true, undefined, null, 10n, Symbol('id'), [],
 ];
 
-const countWithKnownTypes = values => {
+const countWithKnownTypes = (values) => {
   const counts = {
     number: 0,
     string: 0,
@@ -23,7 +23,7 @@ const countWithKnownTypes = values => {
   return counts;
 };
 
-const countWithDynamicTypes = values => {
+const countWithDynamicTypes = (values) => {
   const counts = {};
   for (const value of values) {
     const type = typeof value;

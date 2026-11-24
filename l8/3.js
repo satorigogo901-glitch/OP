@@ -23,7 +23,7 @@ const contract = (fn, ...types) => {
   }
 
   const returnType = types.pop();
-  return function (...args) {
+  return function(...args) {
     if (args.length !== types.length) {
       throw new TypeError(`Expected ${types.length} arguments`);
     }

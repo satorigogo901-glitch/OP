@@ -6,11 +6,10 @@ const phonebook = [
   { name: 'Olena', phone: '+380000000003' },
 ];
 
-const findPhoneByName = name => {
-  for (const entry of phonebook) {
-    if (entry.name === name) return entry.phone;
+const findPhoneByName = (name) => {
+  for (const item of phonebook) {
+    if (item.name === name) return item.phone;
   }
-  return undefined;
 };
 
 module.exports = { phonebook, findPhoneByName };
