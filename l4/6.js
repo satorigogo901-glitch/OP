@@ -1,10 +1,11 @@
-function max(matrix) {
-  let largest = -Infinity;
-  for (const row of matrix) {
-    for (const value of row) {
-      largest = Math.max(largest, value);
+function max(arr) {
+  let res = -Infinity;
+  for (const row of arr) {
+    for (const x of row) {
+      res = Math.max(res, x);
     }
   }
-  return largest;
+  return res;
 }
+
 module.exports = { max };
