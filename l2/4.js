@@ -5,5 +5,4 @@ const range = (start, end) => {
   }
   return numbers;
 };
-
 module.exports = { range };
