@@ -3,8 +3,8 @@ const values = [
   0, 'JavaScript', 3.5, true, undefined, null, 10n, Symbol('id'), [],
 ];
 
-function countWithKnownTypes(values) {
-  const counts = {
+function countWithKnownTypes(arr) {
+  const res = {
     number: 0,
     string: 0,
     boolean: 0,
@@ -15,25 +15,28 @@ function countWithKnownTypes(values) {
     function: 0,
   };
 
-  for (const value of values) {
-    counts[typeof value] += 1;
-  }
-  return counts;
-}
-function dt(values) {
-  const counts = {};
-  for (const value of values) {
+  for (const value of arr) {
     const type = typeof value;
-    if (counts[type] === undefined) {
-      counts[type] = 0;
-    }
-    counts[type] += 1;
+    res[type]++;
   }
-  return counts;
+  return res;
 }
+
+function dt(arr) {
+  const res = {};
+  for (const value of arr) {
+    const type = typeof value;
+    if (res[type] === undefined) {
+      res[type] = 0;
+    }
+    res[type]++;
+  }
+  return res;
+}
+
 if (require.main === module) {
-  console.dir(dt(values));
+  console.dir(countWithKnownTypes(values));
   console.dir(dt(values));
 }
 
-module.exports = {dt, countWithDynamicTypes};
+module.exports = { countWithKnownTypes, countWithDynamicTypes: dt, dt };
