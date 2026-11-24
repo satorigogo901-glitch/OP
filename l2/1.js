@@ -1,4 +1,2 @@
-// Приклад. Тут можна вказати своє ім’я.
-let name = 'Олена';
-
-module.exports = { name };
+let name = 'Нікіта';
+module.exports = {name};
