@@ -1,12 +1,13 @@
 function sum(...args) {
   if (args.length === 0) return 0;
-  let total = 0;
-  let index = 0;
+
+  let res = 0;
+  let i = 0;
   do {
-    total += args[index];
-    index++;
-  } while (index < args.length);
-  return total;
+    res += args[i];
+    i++;
+  } while (i < args.length);
+  return res;
 }
 
 module.exports = { sum };
