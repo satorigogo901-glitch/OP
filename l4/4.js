@@ -1,6 +1,5 @@
 function sum(...args) {
   if (args.length === 0) return 0;
-
   let total = 0;
   let index = 0;
   do {
