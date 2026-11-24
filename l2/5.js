@@ -1,11 +1,11 @@
 const rangeOdd = (start, end) => {
-  const numbers = [];
-  for (let number = start; number <= end; number++) {
-    if (number % 2 !== 0) {
-      numbers.push(number);
+  const arr = [];
+  for (let i = start; i <= end; i++) {
+    if (i % 2 !== 0) {
+      arr.push(i);
     }
   }
-  return numbers;
+  return arr;
 };
 
 module.exports = { rangeOdd };
