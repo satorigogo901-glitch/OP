@@ -1,4 +1,5 @@
 const hello = (name) => {
   console.log(`Привіт, ${name}!`);
 };
-module.exports = {hello};
+
+module.exports = { hello };
