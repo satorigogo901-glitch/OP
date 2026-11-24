@@ -1,10 +1,12 @@
-function removeElements(array, ...items) {
-  // Видаляємо елементи з кінця, щоб попередні індекси не зміщувались.
-  array.reduceRight(function (result, value, index) {
-    if (items.includes(value)) {
-      array.splice(index, 1);
+function remAll(arr, ...items) {
+  const copy = arr.slice();
+  let removed = 0;
+  copy.forEach((item, i) => {
+    if (items.includes(item)) {
+      arr.splice(i - removed, 1);
+      removed++;
     }
-  }, undefined);
+  });
 }
 
-module.exports = { removeElements };
+module.exports = { removeElements: remAll };
