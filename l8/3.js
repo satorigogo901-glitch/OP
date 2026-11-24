@@ -1,4 +1,4 @@
-function matchesType(value, type) {
+function isType(value, type) {
   switch (type) {
     case Number:
       return typeof value === 'number';
@@ -32,16 +32,16 @@ function contract(fn, ...types) {
     }
 
     for (let i = 0; i < args.length; i++) {
-      if (matchesType(args[i], types[i]) === false) {
+      if (!isType(args[i], types[i])) {
         throw new TypeError('Неправильний тип аргументу ' + (i + 1));
       }
     }
 
-    const result = fn.apply(this, args);
-    if (matchesType(result, returnType) === false) {
+    const res = fn.apply(this, args);
+    if (!isType(res, returnType)) {
       throw new TypeError('Неправильний тип результату');
     }
-    return result;
+    return res;
   };
 }
 
