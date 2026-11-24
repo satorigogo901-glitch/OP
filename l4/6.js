@@ -7,5 +7,4 @@ function max(matrix) {
   }
   return largest;
 }
-
 module.exports = { max };
