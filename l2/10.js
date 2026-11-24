@@ -3,5 +3,13 @@ const phonebook = {
   Anna: '+380000000002',
   Olena: '+380000000003',
 };
-const findPhoneByName = (name) => phonebook[name];
+
+function getPhone(name) {
+  if (Object.hasOwn(phonebook, name)) {
+    return phonebook[name];
+  }
+}
+
+const findPhoneByName = (name) => getPhone(name);
+
 module.exports = { phonebook, findPhoneByName };
