@@ -3,7 +3,5 @@ const phonebook = {
   Anna: '+380000000002',
   Olena: '+380000000003',
 };
-
 const findPhoneByName = (name) => phonebook[name];
-
 module.exports = { phonebook, findPhoneByName };
