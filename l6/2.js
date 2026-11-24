@@ -1,30 +1,28 @@
-function compose(...functions) {
-  const errorHandlers = [];
+function compose(...fns) {
+  const handlers = [];
 
   function composed(value) {
-    let result = value;
+    let res = value;
     try {
-      for (let i = functions.length - 1; i >= 0; i--) {
-        const fn = functions[i];
-        result = fn(result);
+      for (let i = fns.length - 1; i >= 0; i--) {
+        const fn = fns[i];
+        res = fn(res);
       }
-    } catch (error) {
-      for (const handler of errorHandlers.slice()) {
-        handler(error);
-      }
+    } catch (err) {
+      handlers.forEach((fn) => fn(err));
       return undefined;
     }
-    return result;
+    return res;
   }
 
-  composed.on = function (event, handler) {
+  composed.on = (event, fn) => {
     if (event !== 'error') {
       throw new TypeError('Очікується подія error');
     }
-    if (typeof handler !== 'function') {
+    if (typeof fn !== 'function') {
       throw new TypeError('Очікується функція');
     }
-    errorHandlers.push(handler);
+    handlers.push(fn);
     return composed;
   };
 
