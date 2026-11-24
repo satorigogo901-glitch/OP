@@ -1,6 +1,6 @@
-function iterate(object, callback) {
-  for (const key of Object.keys(object)) {
-    callback(key, object[key], object);
+function iterate(obj, fn) {
+  for (const key of Object.keys(obj)) {
+    fn(key, obj[key], obj);
   }
 }
 
