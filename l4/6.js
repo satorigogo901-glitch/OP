@@ -1,6 +1,4 @@
-'use strict';
-
-const max = (matrix) => {
+function max(matrix) {
   let largest = -Infinity;
   for (const row of matrix) {
     for (const value of row) {
@@ -8,6 +6,6 @@ const max = (matrix) => {
     }
   }
   return largest;
-};
+}
 
 module.exports = { max };

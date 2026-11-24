@@ -1,10 +1,17 @@
-'use strict';
-
-const pipe = (...fns) => {
-  if (!fns.every((fn) => typeof fn === 'function')) {
-    throw new TypeError('pipe expects functions');
+function pipe(...functions) {
+  for (const fn of functions) {
+    if (typeof fn !== 'function') {
+      throw new TypeError('Очікується функція');
+    }
   }
-  return (value) => fns.reduce((result, fn) => fn(result), value);
-};
+
+  return function (value) {
+    let result = value;
+    for (const fn of functions) {
+      result = fn(result);
+    }
+    return result;
+  };
+}
 
 module.exports = { pipe };

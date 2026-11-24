@@ -1,27 +1,34 @@
-'use strict';
-
-const compose = (...fns) => {
+function compose(...functions) {
   const errorHandlers = [];
 
-  const composed = (value) => {
+  function composed(value) {
+    let result = value;
     try {
-      return fns.reduceRight((result, fn) => fn(result), value);
+      for (let i = functions.length - 1; i >= 0; i--) {
+        const fn = functions[i];
+        result = fn(result);
+      }
     } catch (error) {
-      errorHandlers.forEach((handler) => handler(error));
+      for (const handler of errorHandlers.slice()) {
+        handler(error);
+      }
       return undefined;
     }
-  };
+    return result;
+  }
 
-  composed.on = (event, handler) => {
-    if (event !== 'error') throw new TypeError('Expected the error event');
+  composed.on = function (event, handler) {
+    if (event !== 'error') {
+      throw new TypeError('Очікується подія error');
+    }
     if (typeof handler !== 'function') {
-      throw new TypeError('Expected a function');
+      throw new TypeError('Очікується функція');
     }
     errorHandlers.push(handler);
     return composed;
   };
 
   return composed;
-};
+}
 
 module.exports = { compose };

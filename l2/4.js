@@ -1,5 +1,3 @@
-'use strict';
-
 const range = (start, end) => {
   const numbers = [];
   for (let number = start; number <= end; number++) {

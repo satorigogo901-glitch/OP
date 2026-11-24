@@ -1,7 +1,12 @@
-'use strict';
-
-const introspect = (iface) => Object.entries(iface)
-  .filter(([, value]) => typeof value === 'function')
-  .map(([name, method]) => [name, method.length]);
+function introspect(iface) {
+  const result = [];
+  for (const key of Object.keys(iface)) {
+    const value = iface[key];
+    if (typeof value === 'function') {
+      result.push([key, value.length]);
+    }
+  }
+  return result;
+}
 
 module.exports = { introspect };

@@ -1,5 +1,3 @@
-'use strict';
-
 const phonebook = [
   { name: 'Marcus Aurelius', phone: '+380445554433' },
   { name: 'Anna', phone: '+380000000002' },

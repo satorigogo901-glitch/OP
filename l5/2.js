@@ -1,11 +1,19 @@
-'use strict';
-
-const array = () => {
+function array() {
   const values = [];
-  const access = (index) => values[index];
-  access.push = (value) => values.push(value);
-  access.pop = () => values.pop();
-  return access;
-};
+
+  function get(index) {
+    return values[index];
+  }
+
+  get.push = function (value) {
+    return values.push(value);
+  };
+
+  get.pop = function () {
+    return values.pop();
+  };
+
+  return get;
+}
 
 module.exports = { array };

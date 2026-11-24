@@ -1,11 +1,9 @@
-'use strict';
-
-const sum = (...args) => {
+function sum(...args) {
   let total = 0;
   for (const value of args) {
     total += value;
   }
   return total;
-};
+}
 
 module.exports = { sum };

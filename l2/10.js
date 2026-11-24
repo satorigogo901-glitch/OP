@@ -1,5 +1,3 @@
-'use strict';
-
 const phonebook = {
   'Marcus Aurelius': '+380445554433',
   Anna: '+380000000002',

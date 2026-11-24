@@ -1,8 +1,7 @@
-'use strict';
-
-const difference = (array1, array2) => {
-  const excluded = new Set(array2);
-  return array1.filter((value) => !excluded.has(value));
-};
+function difference(array1, array2) {
+  return array1.filter(function (value) {
+    return array2.includes(value) === false;
+  });
+}
 
 module.exports = { difference };

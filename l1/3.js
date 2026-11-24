@@ -1,11 +1,9 @@
-'use strict';
-
 const values = [
   true, 'hello', 5, 12, -200, false, false, 'word',
   0, 'JavaScript', 3.5, true, undefined, null, 10n, Symbol('id'), [],
 ];
 
-const countWithKnownTypes = (values) => {
+function countWithKnownTypes(values) {
   const counts = {
     number: 0,
     string: 0,
@@ -21,16 +19,19 @@ const countWithKnownTypes = (values) => {
     counts[typeof value] += 1;
   }
   return counts;
-};
+}
 
-const countWithDynamicTypes = (values) => {
+function countWithDynamicTypes(values) {
   const counts = {};
   for (const value of values) {
     const type = typeof value;
-    counts[type] = (counts[type] ?? 0) + 1;
+    if (counts[type] === undefined) {
+      counts[type] = 0;
+    }
+    counts[type] += 1;
   }
   return counts;
-};
+}
 
 if (require.main === module) {
   console.dir(countWithKnownTypes(values));

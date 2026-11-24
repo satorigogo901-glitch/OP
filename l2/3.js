@@ -1,5 +1,3 @@
-'use strict';
-
 const hello = (name) => {
   console.log(`Привіт, ${name}!`);
 };

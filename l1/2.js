@@ -1,8 +1,6 @@
-'use strict';
-
-const inc = (num) => {
+function inc(num) {
   num.n += 1;
-};
+}
 
 if (require.main === module) {
   const obj = { n: 5 };

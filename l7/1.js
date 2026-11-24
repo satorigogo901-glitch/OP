@@ -1,10 +1,11 @@
-'use strict';
-
-const removeElement = (array, item) => {
-  const index = array.findIndex((value) => (
-    value === item || (Number.isNaN(value) && Number.isNaN(item))
-  ));
-  if (index !== -1) array.splice(index, 1);
-};
+function removeElement(array, item) {
+  let index = array.indexOf(item);
+  if (Number.isNaN(item)) {
+    index = array.findIndex(Number.isNaN);
+  }
+  if (index !== -1) {
+    array.splice(index, 1);
+  }
+}
 
 module.exports = { removeElement };

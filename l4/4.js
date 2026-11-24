@@ -1,6 +1,4 @@
-'use strict';
-
-const sum = (...args) => {
+function sum(...args) {
   if (args.length === 0) return 0;
 
   let total = 0;
@@ -10,6 +8,6 @@ const sum = (...args) => {
     index++;
   } while (index < args.length);
   return total;
-};
+}
 
 module.exports = { sum };
