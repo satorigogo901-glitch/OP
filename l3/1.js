@@ -3,6 +3,9 @@ function random(min, max) {
     max = min;
     min = 0;
   }
-  return min + Math.floor(Math.random() * (max - min + 1));
+
+  const count = max - min + 1;
+  return min + Math.floor(Math.random() * count);
 }
+
 module.exports = { random };
