@@ -1,7 +1,8 @@
 function ipToNumber(ip = '127.0.0.1') {
-  const octets = ip.split('.').map(Number);
-  return octets.reduce(function (address, octet) {
-    return (address << 8) | octet;
+  const parts = ip.split('.');
+  return parts.reduce((sum, part, i) => {
+    const shift = (3 - i) * 8;
+    return sum + (Number(part) << shift);
   }, 0);
 }
 
